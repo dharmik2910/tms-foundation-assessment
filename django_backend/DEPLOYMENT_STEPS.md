@@ -67,10 +67,10 @@ git push origin main
 Add these environment variables in the Render dashboard:
 
 ```
-SECRET_KEY = [paste the secret key from step 1]
+SECRET_KEY = qBBJfcklcRgskonsEN8SoGQpObjfW_93x7slJZcPEG9B2LBxNfhr7gGjklpGDcHynP8
 DEBUG = False
-ALLOWED_HOSTS = tms-foundation-api.onrender.com
-DATABASE_URL = [paste the Internal Database URL from step 3]
+ALLOWED_HOSTS = bharatyuva-api.onrender.com
+DATABASE_URL = postgresql://bharatyuva_user:w38sUE8QNJxXyGiIKixKM3G1VTv59PA4@dpg-d5isbpmuk2gs73djk6i0-a/bharatyuva
 CORS_ALLOWED_ORIGINS = https://your-frontend.vercel.app
 ```
 

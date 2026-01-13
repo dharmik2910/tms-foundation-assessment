@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bharatyuva-backend
+    env: python
+    plan: free
+    pythonVersion: 3.13
+    buildCommand: "pip install -r requirements.txt && cd django_backend && python manage.py migrate --no-input && python manage.py collectstatic --no-input"
+    startCommand: "cd django_backend && gunicorn tmsapi.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        scope: build
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: "*"

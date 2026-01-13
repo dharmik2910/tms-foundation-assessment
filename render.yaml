@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bharatyuva-backend
+    env: python
+    plan: free
+    pythonVersion: 3.13
+    buildCommand: "bash build.sh"
+    startCommand: "cd django_backend && gunicorn tmsapi.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: SECRET_KEY
+        scope: build
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: "*"
